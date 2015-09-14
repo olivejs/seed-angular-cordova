@@ -4,7 +4,8 @@
 
   angular
     .module('app', [
-      'ui.router',
+      'ngCordova',
+      'ui.router'
       // Add your dependencies here
     ]);
 

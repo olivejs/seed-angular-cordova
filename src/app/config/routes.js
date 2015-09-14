@@ -6,11 +6,7 @@
     .module('app')
     .config(routesConfig);
 
-  function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
-
-    // Use html5Mode for modern browsers,
-    // and fallback to #! for older browsers and search engine crawlers.
-    $locationProvider.html5Mode(true).hashPrefix('!');
+  function routesConfig($stateProvider, $urlRouterProvider) {
 
     $stateProvider
 

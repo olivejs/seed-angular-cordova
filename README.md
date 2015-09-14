@@ -1,10 +1,12 @@
-# AngularJS Seed
+# Angular-Cordova Seed
 
-> Olive seed for AngularJS - offers you quickly scaffold an AngularJS project with pragmatic defaults and best practices.
+> Olive seed for Angular-Cordova - offers you quickly scaffold a AngularJS-Cordova project with pragmatic defaults and best practices.
 
 ![tech-stack][tech-stack]
 
 ## Usage
+
+#### Prepare
 
 Install gulp, bower and olive if you haven't already:
 ```
@@ -13,13 +15,16 @@ npm install -g olive gulp bower
 Create your project from this Angular seed using Olive CLI:
 ```
 mkdir myapp && cd myapp
-olive new angular
+olive new angular-cordova
 ```
 Install npm and bower dependencies:
 ```
 npm install && bower install
 ```
-Start developing:
+
+#### Develop
+
+Start developing locally:
 ```
 npm start
 ```
@@ -27,9 +32,25 @@ Run test once and generate code coverage reports in `coverage` directory.
 ```
 npm test
 ```
-Build for production:
+
+#### Build
+
+First of all, build the web files. This wil generate a `www` directory which is required by the Cordova CLI.
 ```
 npm run build
+```
+Then specify a set of target platforms if not already specified in config.xml:
+```
+cordova platform add ios
+cordova platform add android
+```
+If the platforms/plugins are already specified (in config.xml), then run `cordova prepare`. It will download and install the specified platforms/plugins.
+```
+cordova prepare
+```
+Then build for the device platforms:
+```
+cordova build
 ```
 
 ## Features
@@ -97,7 +118,7 @@ Not all the view templates follow the same layout. Use an intuitive way to struc
 │ │ ├─apple-touch-icon.png
 │ │ └─favicon.ico
 │ └─index.html
-├─dist/
+├─www/
 ├─.tmp/
 ├─bower_components/
 ├─node_modules/
@@ -118,7 +139,7 @@ Not all the view templates follow the same layout. Use an intuitive way to struc
 File/Directory    | Purpose
 ------------------|---------
 src/              | Contains your Angular application code.
-dist/             | Contains the distributable (that is, optimized and self-contained) output of your application. Deploy this to your server!
+www/              | Contains the distributable (that is, optimized and self-contained) output of your application. Deploy this to your server!
 .tmp/             | Various temporary output of build steps, as well as the debug output of your application.
 bower_components/ |	Bower dependencies.
 node_modules      | Node modules required for development purpose.
