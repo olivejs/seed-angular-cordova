@@ -4,6 +4,7 @@
     "angular": "~1.4.5",
     "angular-ui-router": "~0.2.15",
     "bootstrap-sass": "~3.2.0",
+    "fastclick": "~1.0.6",
     "ngCordova": "~0.1.20-alpha"
   },
   "devDependencies": {
