@@ -1,9 +1,16 @@
 {
-  "version": "0.1.3",
+  "version": "0.1.0",
   "ports": {
     "karma": 3002
   },
   "paths": {
     "dist": "www"
+  },
+  "content-security-policy": {
+    "production": {
+      "default-src": "'self' data: gap: https://ssl.gstatic.com https://api.github.com 'unsafe-eval'",
+      "style-src": "'self' 'unsafe-inline'",
+      "media-src": "*"
+    }
   }
 }

@@ -8,15 +8,17 @@
 
 #### Prepare
 
-Install gulp, bower and olive if you haven't already:
+Install `gulp`, `bower` and `olive` if you haven't already:
 ```
 npm install -g olive gulp bower
 ```
-Create your project from this Angular seed using Olive CLI:
+
+Create your project from this Angular seed using Olive CLI (**Skip this if not creating a new project**):
 ```
 mkdir myapp && cd myapp
 olive new angular-cordova
 ```
+
 Install npm and bower dependencies:
 ```
 npm install && bower install
@@ -28,6 +30,7 @@ Start developing locally:
 ```
 npm start
 ```
+
 Run test once and generate code coverage reports in `coverage` directory.
 ```
 npm test
@@ -35,26 +38,24 @@ npm test
 
 #### Build
 
-First of all, build the web files. This will generate a `www` directory which is required by the Cordova CLI.
+First, specify a set of target platforms (if not already listed in `config.xml`). This will also download and install the plugins specified in `config.xml`.
+```
+cordova platform add ios android
+```
+
+Then, build the web files:
 ```
 npm run build
 ```
-Then specify a set of target platforms if not already specified in config.xml:
+
+And, build for specific platforms:
 ```
-cordova platform add ios
-cordova platform add android
+cordova build ios
 ```
-If the platforms/plugins are already specified (in config.xml), then run `cordova prepare`. It will download and install the specified platforms/plugins.
+
+Or, run in a simulator:
 ```
-cordova prepare
-```
-Then build for the device platforms:
-```
-cordova build
-```
-Run in simulator:
-```
-cordova run
+cordova run ios
 ```
 
 ## Features

@@ -23,6 +23,5 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-    <engine name="ios" spec="^3.8.0" />
     <plugin name="org.apache.cordova.device" spec="~0.3.0" />
 </widget>

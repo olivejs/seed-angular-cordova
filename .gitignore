@@ -1,7 +1,8 @@
 node_modules/
 bower_components/
 .tmp/
-www/
+www/*
+!www/.gitkeep
 coverage/
 platforms/
 plugins/
