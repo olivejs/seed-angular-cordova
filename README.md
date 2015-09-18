@@ -35,7 +35,7 @@ npm test
 
 #### Build
 
-First of all, build the web files. This wil generate a `www` directory which is required by the Cordova CLI.
+First of all, build the web files. This will generate a `www` directory which is required by the Cordova CLI.
 ```
 npm run build
 ```
@@ -51,6 +51,10 @@ cordova prepare
 Then build for the device platforms:
 ```
 cordova build
+```
+Run in simulator:
+```
+cordova run
 ```
 
 ## Features
