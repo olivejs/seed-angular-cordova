@@ -1,25 +1,38 @@
-<main class="home">
+<div class="home">
 
-  <div class="jumbotron">
-    <h2>Olive is ready!</h2>
+  <md-card layout-align="center center">
     <img src="img/olive.png" alt="Olive">
     <div repoinfo repo="githubRepo"></div>
-    <p>Learn more from the <a ng-href="{{githubRepo.url}}">documentation</a>.</p>
-    <p>
-      <button class="btn btn-lg btn-success" type="button">
-        Awesome!
-        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-      </button>
-    </p>
-  </div>
+  </md-card>
 
-  <div class="jumbotron">
-    <h2>Device Info</h2>
-    <hr>
-    <p class="text-left">Model: {{device.model}}</p>
-    <p class="text-left">Platform: {{device.platform}}</p>
-    <p class="text-left">UUID: {{device.uuid}}</p>
-    <p class="text-left">Version: {{device.version}}</p>
-  </div>
+  <md-card>
+    <md-list>
+      <md-subheader class="md-no-sticky">App Info</md-subheader>
+      <md-list-item class="md-2-line">
+        <div class="md-list-item-text">
+          <h3>App Name:</h3>
+          <p>{{appInfo.name}}</p>
+        </div>
+      </md-list-item>
+      <md-list-item class="md-2-line">
+        <div class="md-list-item-text">
+          <h3>App Version:</h3>
+          <p>{{appInfo.version}}</p>
+        </div>
+      </md-list-item>
+    </md-list>
+  </md-card>
 
-</main>
+  <md-card>
+    <md-list>
+      <md-subheader class="md-no-sticky">Device Info</md-subheader>
+      <md-list-item class="md-2-line" ng-repeat="info in deviceInfo">
+        <div class="md-list-item-text">
+          <h3>{{info.name}}:</h3>
+          <p>{{info.value}}</p>
+        </div>
+      </md-list-item>
+    </md-list>
+  </md-card>
+
+</div>

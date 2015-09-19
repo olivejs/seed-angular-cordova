@@ -5,33 +5,42 @@
   <title></title>
   <meta name="description" content="">
 
+  <!--
+  Customize this policy (in .oliverc) to fit your own app's needs. For more guidance, see:
+  https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+
+  Some notes:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+    * Enable inline JS: add 'unsafe-inline' to default-src
+  -->
   <!-- inject:csp -->
   <!-- endinject -->
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <!-- Place favicon.ico in the root directory -->
 
-  <!-- build:css(.tmp) css/vendor.css -->
+  <!-- build:css({.tmp/build,src}) css/vendor.css -->
   <!-- bower:css -->
   <!-- bower stylesheets will be automatically inserted here -->
   <!-- endbower -->
   <!-- endbuild -->
 
-  <!-- build:css(.tmp) css/app.css -->
+  <!-- build:css({.tmp/build,src}) css/app.css -->
   <!-- inject:css -->
   <!-- other stylesheets will be automatically inserted here -->
   <!-- endinject -->
   <!-- endbuild -->
 
 </head>
-<body>
-  <!--[if lt IE 8]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+<body layout>
 
-  <div ui-view></div>
+  <div ui-view layout layout-fill></div>
 
   <!-- build:js(src) js/vendor.js -->
   <!-- bower:js -->
@@ -41,7 +50,7 @@
 
   <script src="cordova.js"></script>
 
-  <!-- build:js({.tmp,src/app}) js/app.js -->
+  <!-- build:js({.tmp/build,src/app}) js/app.js -->
   <!-- inject:appinfo -->
   <!-- appinfo scripts will be automatically inserted here -->
   <!-- endinject -->

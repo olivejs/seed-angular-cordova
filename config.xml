@@ -24,4 +24,5 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <plugin name="org.apache.cordova.device" spec="~0.3.0" />
+    <plugin name="org.apache.cordova.inappbrowser" spec="~0.6.0" />
 </widget>

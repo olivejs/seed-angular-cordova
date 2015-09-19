@@ -1,3 +1,4 @@
-<header ui-view="header"></header>
-<div ui-view="main" class="container"></div>
-<footer ui-view="footer"></footer>
+<div layout="column" flex>
+  <div ui-view="toolbar"></div>
+  <md-content ui-view="main"></md-content>
+</div>

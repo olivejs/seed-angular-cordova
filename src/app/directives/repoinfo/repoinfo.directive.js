@@ -6,7 +6,8 @@
     .module('app')
     .directive('repoinfo', repoinfo);
 
-  function repoinfo(Github) {
+  function repoinfo(Github, $cordovaInAppBrowser, $log) {
+
     return {
       restrict: 'A',
       templateUrl: 'directives/repoinfo/repoinfo.html',
@@ -16,10 +17,14 @@
       controller: RepoinfoController
     };
 
-    function RepoinfoController($scope, $log) {
+    function RepoinfoController($scope) {
 
       $scope.repo.starsCount = '- -';
       $scope.repo.forksCount = '- -';
+
+      $scope.openUrl = function(url) {
+        $cordovaInAppBrowser.open(url, '_system');
+      };
 
       Github.getRepo($scope.repo.name)
         .then(function(data) {
@@ -31,6 +36,7 @@
           $log.warn('GitHub: ' + data.message);
         });
     }
+
   }
 
 })();

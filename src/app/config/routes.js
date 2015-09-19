@@ -17,11 +17,8 @@
         '@': {
           templateUrl: 'layouts/default/default.html'
         },
-        'header@root': {
-          templateUrl: 'partials/header/header.html'
-        },
-        'footer@root': {
-          templateUrl: 'partials/footer/footer.html'
+        'toolbar@root': {
+          templateUrl: 'partials/toolbar/toolbar.html'
         }
       },
     })
