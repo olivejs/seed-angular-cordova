@@ -305,6 +305,13 @@ gulp.task('serve', ['setenv:development', 'clean:tmp', 'appinfo', 'watch'], func
         function (req, res, next) {
           res.setHeader('X-UA-Compatible', 'IE=Edge');
           next();
+        },
+        function (req, res, next) {
+          // send empty response to prevent network error for `cordova.js`
+          if (req.url === '/cordova.js') {
+            res.end();
+          }
+          next();
         }
       ]
     },
