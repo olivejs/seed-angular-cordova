@@ -18,6 +18,10 @@
       expect(typeof $scope.githubRepo.name).toBe('string');
     });
 
+    it('- should have deviceInfo array with 5 items in it', function() {
+      expect($scope.deviceInfo.length).toEqual(5);
+    });
+
   });
 
 })();

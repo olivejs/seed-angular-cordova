@@ -55,6 +55,7 @@
     <icon src="res/ios/icon-50.png" width="50" height="50" />
     <icon src="res/ios/icon-50@2x.png" width="100" height="100" />
   </platform>
-  <plugin name="org.apache.cordova.device" spec="~0.3.0" />
-  <plugin name="org.apache.cordova.inappbrowser" spec="~0.6.0" />
+  <plugin name="cordova-plugin-device" spec="~1.0.1" />
+  <plugin name="cordova-plugin-inappbrowser" spec="~1.0.1" />
+  <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
 </widget>

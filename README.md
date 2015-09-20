@@ -58,6 +58,11 @@ Or, run in a simulator:
 cordova run ios
 ```
 
+You can also deploy on an actual device:
+```
+cordova run ios --device
+```
+
 ## Features
 
 #### Test Driven Development

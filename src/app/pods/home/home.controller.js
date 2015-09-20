@@ -22,13 +22,21 @@
       { name: 'Version' }
     ];
 
-    // Retrieve device related information
-    $window.document.addEventListener('deviceready', function () {
+    $window.document.addEventListener('deviceready', onDeviceReady, false);
+
+    function onDeviceReady() {
+      // retrieve device related information
       var device = $cordovaDevice.getDevice();
       angular.forEach($scope.deviceInfo, function(info) {
         info.value = device[info.name.toLowerCase()];
       });
-    }, false);
+
+      // for iOS version 7 or greater
+      if ($window.device.platform.toLowerCase() === 'ios' && parseFloat($window.device.version) >= 7.0) {
+        angular.element('body').addClass('statusbar-overlay');
+      }
+    }
+
   }
 
 })();
