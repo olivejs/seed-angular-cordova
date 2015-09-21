@@ -22,6 +22,9 @@
       var document = $window.document;
 
       document.addEventListener('deviceready', onDeviceReady, false);
+      $scope.$on('$destroy', function() {
+        document.removeEventListener('deviceready', onDeviceReady, false);
+      });
 
       function onDeviceReady() {
         var device = $window.device;

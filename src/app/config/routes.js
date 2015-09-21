@@ -10,7 +10,6 @@
 
     $stateProvider
 
-    // Uses default layout
     .state('home', {
       url: '/',
       templateUrl: 'pods/home/home.html',

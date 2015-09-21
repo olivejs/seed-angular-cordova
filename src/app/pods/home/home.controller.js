@@ -23,6 +23,9 @@
     ];
 
     $window.document.addEventListener('deviceready', onDeviceReady, false);
+    $scope.$on('$destroy', function() {
+      $window.document.removeEventListener('deviceready', onDeviceReady, false);
+    });
 
     function onDeviceReady() {
       // retrieve device related information
