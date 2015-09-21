@@ -4,9 +4,9 @@
 
   angular
     .module('app')
-    .directive('repoinfo', repoinfo);
+    .directive('repoinfo', repoinfoDirective);
 
-  function repoinfo(Github, $cordovaInAppBrowser, $log) {
+  function repoinfoDirective(Github, $cordovaInAppBrowser, $log) {
 
     return {
       restrict: 'A',
@@ -37,6 +37,6 @@
         });
     }
 
-  }
+  } // END repoinfoDirective
 
 })();

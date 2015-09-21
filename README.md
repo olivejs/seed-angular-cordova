@@ -77,37 +77,24 @@ See how much of your code is covered by well-written test scripts.
 
 ![coverage][coverage-image]
 
-#### Supports Multiple layouts
-
-Not all the view templates follow the same layout. Use an intuitive way to structure the layouts and partials.
-
-![layouts][layouts-image]
-
 ## Directory Structure
 
 ```
 ├─src/
 │ ├─app/
-│ │ ├─components/
-│ │ │ └─navbar/
-│ │ │   ├─repoinfo.directive.js
-│ │ │   ├─repoinfo.html
-│ │ │   └─repoinfo.scss
 │ │ ├─config/
+│ │ │ ├─constants.js
 │ │ │ ├─modules.js
 │ │ │ ├─routes.js
 │ │ │ └─run.js
-│ │ ├─layouts/
-│ │ │ └─default/
-│ │ │   ├─default.html
-│ │ │   └─default.scss
-│ │ ├─partials/
-│ │ │ ├─footer/
-│ │ │ │ ├─footer.html
-│ │ │ │ └─footer.scss
-│ │ │ └─header/
-│ │ │   ├─header.html
-│ │ │   └─header.scss
+│ │ ├─directives/
+│ │ │ ├─repoinfo/
+│ │ │ │ ├─repoinfo.directive.js
+│ │ │ │ ├─repoinfo.html
+│ │ │ │ └─repoinfo.scss
+│ │ │ └─toolbar/
+│ │ │   ├─toolbar.directive.js
+│ │ │   └─toolbar.scss
 │ │ ├─pods/
 │ │ │ └─home/
 │ │ │   ├─home.controller.js
@@ -118,6 +105,7 @@ Not all the view templates follow the same layout. Use an intuitive way to struc
 │ │ │ └─github
 │ │ │   └─github.service.js
 │ │ ├─styles/
+│ │ │ ├─_base.scss
 │ │ │ ├─_overrides.scss
 │ │ │ ├─_type.scss
 │ │ │ └─app.scss
@@ -125,9 +113,9 @@ Not all the view templates follow the same layout. Use an intuitive way to struc
 │ ├─assets/
 │ │ ├─img/
 │ │ ├─fonts/
-│ │ ├─apple-touch-icon.png
 │ │ └─favicon.ico
 │ └─index.html
+├─res/
 ├─www/
 ├─.tmp/
 ├─bower_components/
@@ -140,6 +128,7 @@ Not all the view templates follow the same layout. Use an intuitive way to struc
 ├─.jshintrc
 ├─.oliverc
 ├─bower.json
+├─config.xml
 ├─gulpfile.js
 ├─karma.conf.js
 ├─package.json
@@ -149,6 +138,7 @@ Not all the view templates follow the same layout. Use an intuitive way to struc
 File/Directory    | Purpose
 ------------------|---------
 src/              | Contains your Angular application code.
+res/              | Contains app icons and splash images
 www/              | Contains the distributable (that is, optimized and self-contained) output of your application. Deploy this to your server!
 .tmp/             | Various temporary output of build steps, as well as the debug output of your application.
 bower_components/ |	Bower dependencies.
@@ -162,6 +152,7 @@ node_modules      | Node modules required for development purpose.
 .jshintrc         | JSHint configuration.
 .oliverc          | Olive configuration.
 bower.json        | Bower configuration and dependency list.
+config.xml        | Cordova configuration file
 gulpfile.js       | Contains build specification for Gulp.
 karma.conf.js     | Karma configuration.
 package.json      | NPM configuration. Mainly used to list the dependencies needed for asset compilation.

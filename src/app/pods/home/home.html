@@ -1,38 +1,52 @@
-<div class="home">
+<div layout="column" flex class="home">
 
-  <md-card layout-align="center center">
-    <img src="img/olive.png" alt="Olive">
-    <div repoinfo repo="githubRepo"></div>
-  </md-card>
+  <md-toolbar ui-view="toolbar" class="md-whiteframe-z2">
+    <div class="md-toolbar-tools">
+      <md-button class="md-icon-button" aria-label="Settings">
+        <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+      </md-button>
+      <h2 flex>
+        <span>Hello Olive</span>
+      </h2>
+      <md-button class="md-icon-button" aria-label="More">
+        <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
 
-  <md-card>
-    <md-list>
-      <md-subheader class="md-no-sticky">App Info</md-subheader>
-      <md-list-item class="md-2-line">
-        <div class="md-list-item-text">
-          <h3>App Name:</h3>
-          <p>{{appInfo.name}}</p>
-        </div>
-      </md-list-item>
-      <md-list-item class="md-2-line">
-        <div class="md-list-item-text">
-          <h3>App Version:</h3>
-          <p>{{appInfo.version}}</p>
-        </div>
-      </md-list-item>
-    </md-list>
-  </md-card>
-
-  <md-card>
-    <md-list>
-      <md-subheader class="md-no-sticky">Device Info</md-subheader>
-      <md-list-item class="md-2-line" ng-repeat="info in deviceInfo">
-        <div class="md-list-item-text">
-          <h3>{{info.name}}:</h3>
-          <p>{{info.value}}</p>
-        </div>
-      </md-list-item>
-    </md-list>
-  </md-card>
+  <md-content>
+    <md-card layout-align="center center">
+      <img src="img/olive.png" alt="Olive">
+      <div repoinfo repo="githubRepo"></div>
+    </md-card>
+    <md-card>
+      <md-list>
+        <md-subheader class="md-no-sticky">App Info</md-subheader>
+        <md-list-item class="md-2-line">
+          <div class="md-list-item-text">
+            <h3>App Name:</h3>
+            <p>{{appInfo.name}}</p>
+          </div>
+        </md-list-item>
+        <md-list-item class="md-2-line">
+          <div class="md-list-item-text">
+            <h3>App Version:</h3>
+            <p>{{appInfo.version}}</p>
+          </div>
+        </md-list-item>
+      </md-list>
+    </md-card>
+    <md-card>
+      <md-list>
+        <md-subheader class="md-no-sticky">Device Info</md-subheader>
+        <md-list-item class="md-2-line" ng-repeat="info in deviceInfo">
+          <div class="md-list-item-text">
+            <h3>{{info.name}}:</h3>
+            <p>{{info.value}}</p>
+          </div>
+        </md-list-item>
+      </md-list>
+    </md-card>
+  </md-content>
 
 </div>
